@@ -5,10 +5,12 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename'),
 	karma = require('gulp-karma'),
+	templateCache = require('gulp-templatecache'),
 	wrap = require('gulp-wrap'),
 	pipeline = require('multipipe'),
 	colors = util.colors,
 	log = util.log,
+	spawn = require('child_process').spawn,
 	wrapper = '(function(undefined){\n\n<%= contents %>\n}());';
 
 gulp.task('min', function() {
@@ -41,13 +43,62 @@ gulp.task('sass', function() {
 	pipe.on('error', createLogger('sass'));
 });
 
+gulp.task('mocks', function() {
+	var pipe = pipeline(
+		gulp.src('public/mock/**/*.js'),
+		concat('mocks.js'),
+		gulp.dest('public')
+	);
+
+	pipe.on('error', createLogger('mocks'));
+})
+
 gulp.task('server', function() {
 	require('./server');
 });
 
+gulp.task('views', function() {
+	var pipe = pipeline(
+		gulp.src('views/**/*.html'),
+		templateCache({
+			output: 'views.js',
+			strip: 'views',
+			moduleName: 'todo',
+			minify: {
+				collapseBooleanAttributes: true,
+				collapseWhitespace: true
+			}
+		}),
+		gulp.dest('public')
+	);
+
+	pipe.on('error', createLogger('views'));
+});
+
+gulp.task('test', function() {
+	var karma = spawn('./node_modules/karma/bin/karma', ['start', 'test/karma.conf.js']),
+		testLogger = createLogger('test');
+
+	karma.stderr.on('data', function(data) {
+		console.log('' + data);
+	});
+
+	karma.stdout.on('data', function(data) {
+		console.log('' + data);
+	});
+
+	karma.on('close', function(code) {
+		if (code !== 0) {
+			console.log('Karma exited with code ' + code);
+		}
+	});
+})
+
 gulp.task('watch', function() {
 	gulp.watch('src/**/*.js', ['min']);
 	gulp.watch('scss/**/*.scss', ['sass']);
+	gulp.watch('views/**/*.html', ['views']);
+	gulp.watch('public/mock/**/*.js', ['mocks']);
 });
 
 gulp.task('default', ['min', 'sass', 'watch']);
@@ -60,6 +111,6 @@ function createLogger(name) {
 		while (i--) args[i] = arguments[i];
 
 		args.unshift(colors.red('>>' + name) + ': ');
-		log.apply(args);
+		log.apply(null, args);
 	};
 }

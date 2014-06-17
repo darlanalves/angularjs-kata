@@ -1,5 +1,5 @@
 describe('TaskCreateController:', function() {
-	beforeEach(module('unit-testing'));
+	beforeEach(module('todo-dev'));
 
 	var controllerScope, TaskService;
 	beforeEach(inject(function($rootScope, $controller, _$httpBackend_) {

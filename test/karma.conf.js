@@ -6,7 +6,7 @@ module.exports = function(config) {
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-		reporters: ['progress', 'coverage'],
+		reporters: ['progress'], //, 'coverage'
 
 		// level of logging
 		// possible values: config.LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
@@ -31,12 +31,12 @@ module.exports = function(config) {
 			'public/lib/angular-mocks.js',
 			'public/lib/angular-ui-router.js',
 			'public/app.js',
-			// 'test/mock/**/*.js',
 			'test/unit/**/*.spec.js',
 			'test/unit/run.js'
+			// 'public/mocks.js'
 		],
 
-		urlRoot: '/karma/',
+		urlRoot: '/__karma__/',
 
 		// Start these browsers, currently available:
 		// - Chrome

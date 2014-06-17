@@ -1,7 +1,7 @@
 describe('TaskService:', function() {
 	var $httpBackend;
 
-	beforeEach(module('unit-testing'));
+	beforeEach(module('todo-dev'));
 
 	beforeEach(inject(function($injector) {
 		$httpBackend = $injector.get('$httpBackend');

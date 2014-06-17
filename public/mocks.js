@@ -1,3 +1,4 @@
+angular.module('todo-dev', ['todo', 'ngMock']);
 angular.module('todo-dev').run(function($httpBackend) {
 
 	$httpBackend.whenGET('/api/task').respond(200, [

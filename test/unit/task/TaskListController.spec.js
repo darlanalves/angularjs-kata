@@ -1,5 +1,5 @@
 describe('TaskListController:', function() {
-	beforeEach(module('unit-testing'));
+	beforeEach(module('todo-dev'));
 
 	var controllerScope,
 		TaskService;
