@@ -1,5 +1,5 @@
-$module.controller('TaskViewController', ['$scope', 'TaskService',
-	function($scope, TaskService) {
-
+$module.controller('TaskViewController', ['$scope', 'TaskService', '$stateParams',
+	function($scope, TaskService, $stateParams) {
+		$scope.task = TaskService.findOne($stateParams.taskId);
 	}
 ]);

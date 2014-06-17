@@ -6,7 +6,7 @@ $module.service('TaskService', ['$http',
 			},
 
 			save: function(task) {
-				return $http.post('/api/task', save);
+				return $http.post('/api/task', JSON.stringify(task));
 			},
 
 			findOne: function(id) {

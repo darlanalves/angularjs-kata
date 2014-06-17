@@ -1,26 +1,21 @@
 $module.config(['$stateProvider',
 	function($stateProvider) {
 		var states = {
-			'todo': {
-				url: '',
-				templateUrl: 'layout.html'
-			},
-
-			'todo.list': {
+			'todo-list': {
 				url: '/tasks',
 				templateUrl: 'task.list.html',
 				controller: 'TaskListController'
 			},
 
-			'todo.create': {
+			'todo-create': {
 				url: '/tasks/new',
 				templateUrl: 'task.create.html',
 				controller: 'TaskCreateController'
 			},
 
-			'todo.view': {
+			'todo-view': {
 				url: '/tasks/:taskId',
-				templateUrl: 'task.view.html',
+				templateUrl: '/task.view.html',
 				controller: 'TaskViewController'
 			}
 		};

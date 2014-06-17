@@ -1,29 +1,24 @@
 (function(undefined){
 
-var $module = angular.module('todo', ['ngMockE2E']);
+var $module = angular.module('todo', ['ui.router']);
 $module.config(['$stateProvider',
 	function($stateProvider) {
 		var states = {
-			'todo': {
-				url: '',
-				templateUrl: 'layout.html'
-			},
-
-			'todo.list': {
+			'todo-list': {
 				url: '/tasks',
 				templateUrl: 'task.list.html',
 				controller: 'TaskListController'
 			},
 
-			'todo.create': {
+			'todo-create': {
 				url: '/tasks/new',
 				templateUrl: 'task.create.html',
 				controller: 'TaskCreateController'
 			},
 
-			'todo.view': {
+			'todo-view': {
 				url: '/tasks/:taskId',
-				templateUrl: 'task.view.html',
+				templateUrl: '/task.view.html',
 				controller: 'TaskViewController'
 			}
 		};
@@ -35,12 +30,16 @@ $module.config(['$stateProvider',
 ]);
 $module.controller('TaskCreateController', ['$scope', 'TaskService',
 	function($scope, TaskService) {
+		$scope.task = {};
 
+		$scope.saveTask = function() {
+			TaskService.save($scope.task);
+		};
 	}
 ]);
 $module.controller('TaskListController', ['$scope', 'TaskService',
 	function($scope, TaskService) {
-
+		$scope.taskList = TaskService.findAll();
 	}
 ]);
 $module.service('TaskService', ['$http',
@@ -51,7 +50,7 @@ $module.service('TaskService', ['$http',
 			},
 
 			save: function(task) {
-				return $http.post('/api/task', save);
+				return $http.post('/api/task', JSON.stringify(task));
 			},
 
 			findOne: function(id) {
@@ -60,9 +59,9 @@ $module.service('TaskService', ['$http',
 		};
 	}
 ]);
-$module.controller('TaskViewController', ['$scope', 'TaskService',
-	function($scope, TaskService) {
-
+$module.controller('TaskViewController', ['$scope', 'TaskService', '$stateParams',
+	function($scope, TaskService, $stateParams) {
+		$scope.task = TaskService.findOne($stateParams.taskId);
 	}
 ]);
 }());

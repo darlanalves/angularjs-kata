@@ -1,1 +1,1 @@
-var $module = angular.module('todo', ['ngMockE2E']);
+var $module = angular.module('todo', ['ui.router']);

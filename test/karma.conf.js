@@ -31,8 +31,9 @@ module.exports = function(config) {
 			'public/lib/angular-mocks.js',
 			'public/lib/angular-ui-router.js',
 			'public/app.js',
-			'test/mock/**/*.js',
-			'test/unit/**/*.spec.js'
+			// 'test/mock/**/*.js',
+			'test/unit/**/*.spec.js',
+			'test/unit/run.js'
 		],
 
 		urlRoot: '/karma/',
@@ -47,6 +48,7 @@ module.exports = function(config) {
 		// - IE (only Windows)
 		// frameworks to use
 		browsers: ['PhantomJS'],
+
 		frameworks: ['jasmine'],
 
 		// web server port
