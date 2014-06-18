@@ -3,9 +3,13 @@
 	&:last-child, &.last { margin-right: 0 }
 }
 
-%paddings {
+%h-paddings {
 	padding-left: $font-size;
 	padding-right: $font-size;
+}
+
+%paddings {
+	padding: $font-size;
 }
 
 %double-paddings {

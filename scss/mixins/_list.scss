@@ -1,5 +1,5 @@
 %list {
-	.header {
+	.list-header {
 		font-weight: bold;
 		&:focus, &:hover { outline: 0; }
 	}
@@ -16,6 +16,15 @@
 
 %list-item {
 	cursor: pointer;
+	position: relative;
 	@extend %paddings;
 	@extend %ellipsis;
+	@extend %vr-block;
+
+	.right {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
 }

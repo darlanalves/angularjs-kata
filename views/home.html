@@ -1,7 +1,14 @@
-<header>
-	<div class="left"><button><i class="icon-reorder"></i></button></div>
-	<div class="center">Hello!</div>
-	<div class="right"><button><i class="icon-star"></i></button></div>
-</header>
+<article>
+	<section class="light">
+		<header class="header">
+			<div class="left"><button><i class="icon-reorder"></i></button></div>
+			<div class="center">Hello!</div>
+			<div class="right"><button><i class="icon-star"></i></button></div>
+		</header>
+	</section>
 
-<p>You have <a ui-sref="task-list"><strong>{{tasks.length}} tasks.</strong></a></p>
+	<section class="dark">
+		<p>You have <strong><a ui-sref="task-list" class="anchor">{{tasks.length}} tasks</a></strong></p>
+	</section>
+
+</article>

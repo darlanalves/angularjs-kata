@@ -1,0 +1,18 @@
+.form-new-task {
+  background: #4c4c4c; }
+  .form-new-task h2 {
+    text-transform: uppercase;
+    text-align: center; }
+  .form-new-task > div {
+    overflow: hidden; }
+  .form-new-task .input-container {
+    width: 80%;
+    float: left; }
+  .form-new-task .button-container {
+    width: 20%; }
+    .form-new-task .button-container button {
+      border-radius: 0;
+      width: 100%; }
+
+.task-list .done label {
+  text-decoration: line-through; }

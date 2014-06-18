@@ -1,31 +1,34 @@
-#{$theme-prefix} {
-	&.list {
-		@extend %list;
-		background-color: $list-background;
+#{$theme-prefix} .list {
+	@extend %list;
+}
 
-		.header {
-			background-color: $list-background-header;
-		}
+#{$theme-prefix} .list {
+	background-color: $list-background;
 
-		.inline-edit {
-			input {
-				color: $list-color;
-				background: transparent;
+	.header {
+		background-color: $list-background-header;
+	}
 
-				&:focus {
-					background-color: lighten($list-background, 5%);
-				}
+	.inline-edit {
+		input {
+			color: $list-color;
+			background: transparent;
+
+			&:focus {
+				background-color: lighten($list-background, 5%);
 			}
 		}
 	}
+}
 
-	&.list-item {
-		@extend %list-item;
-		color: $list-color;
-		
-		&:focus, &:hover {
-			background-color: $list-background-active;
-			outline: 1px solid darken($list-background-active, 5%);
-		}
+#{$theme-prefix} .list-item {
+	@extend %list-item;
+}
+
+#{$theme-prefix} .list-item {
+	color: $list-color;
+	&:focus, &:hover {
+		background-color: $list-background-active;
+		outline: 1px solid darken($list-background-active, 5%);
 	}
 }

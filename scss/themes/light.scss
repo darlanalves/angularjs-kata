@@ -27,6 +27,6 @@ $input-color-invalid: #d11;
 
 $form-label-color: $base-color;
 
-$theme-prefix: [theme="light"];
+$theme-prefix: '.light';
 
 @import "theme";

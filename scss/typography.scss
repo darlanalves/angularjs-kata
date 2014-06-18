@@ -1,49 +1,44 @@
 @import "base";
+@import "mixins";
 
 body, p textarea {
 	font-family: $font-family;
 	font-size: $font-size;
-	line-height: 1.4em;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
-	line-height: 1.4em;
 	margin: 0;
 }
 
 h1, .h1 {
-	@include vr-level-1;
+	@extend %vr-level-1;
 }
 
 h2, .h2 {
-	@include vr-level-2;
+	@extend %vr-level-2;
 }
 
 h3, .h3 {
-	@include vr-level-3;
+	@extend %vr-level-3;
 }
 
 h4, .h4 {
-	@include vr-level-4;
+	@extend %vr-level-4;
 }
 
 h5, .h5 {
-	@include vr-level-5;
+	@extend %vr-level-5;
 }
 
 h6, .h6 {
-	@include vr-level-6;
+	@extend %vr-level-6;
 }
 
 p,.p {
-	@include vr-level-7;
-}
-
-li {
-	@include vr-block;
+	@extend %vr-level-7;
 }
 
 .ellipsis {
-	@include ellipsis;
+	@extend %ellipsis;
 }

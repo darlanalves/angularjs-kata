@@ -31,11 +31,12 @@ gulp.task('min', function() {
 
 gulp.task('sass', function() {
 	var pipe = pipeline(
-		gulp.src('scss/*.scss'),
+		gulp.src('scss/**/*.scss'),
 		sass({
-			outputStyle: 'compressed',
+			outputStyle: 'nested',
 			errLogToConsole: true
 		}),
+		gulp.dest('public/css'),
 		concat('app.css'),
 		gulp.dest('public')
 	);

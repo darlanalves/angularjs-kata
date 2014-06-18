@@ -1,5 +1,5 @@
 #{$theme-prefix} {
-	&.anchor {
+	.anchor {
 		@extend %anchor;
 		color: $anchor-color;
 	}

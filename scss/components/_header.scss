@@ -1,16 +1,15 @@
-$header-button-size: 48px;
+$header-button-size: 4.8rem;
 
-#{$theme-prefix} 
-	&.header {
-		@extend %header;
+#{$theme-prefix} .header {
+	@include header;
+	background-color: $base-color;
 
-		button {
-			background-color: transparent;
-			color: white;
+	button {
+		background-color: transparent;
+		color: white;
 
-			&:hover, &:focus {
-				@include box-shadow(#333, 0, 0, 7px, 0, inset);
-			}
+		&:hover, &:focus {
+			@include box-shadow(#333, 0, 0, 7px, 0, inset);
 		}
 	}
 }

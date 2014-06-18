@@ -1,18 +1,27 @@
 $header-button-size: 4.8rem;
+$header-font-size: 2rem;
 
-%header {
+@mixin header {
 	display: block;
 	position: relative;
 	@extend %vr-block;
-	@extend %theme-b;
 
 	button {
-		padding: $font-size;
-		font-size: $font-size;
+		padding: 1rem;
 		border: 0;
+		font-size: $header-font-size;
+		width: $header-button-size;
+		height: $header-button-size;
 	}
 
-	> .left {
+
+	> .left,
+	> .right,
+	> .center {
+		height: $header-button-size;
+	}
+
+	.left {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -20,14 +29,16 @@ $header-button-size: 4.8rem;
 		float: left;
 	}
 
-	> .center {
+	.center {
 		@extend %ellipsis;
 		text-align: center;
 		font-weight: bold;
+		font-size: $header-font-size;
 		margin: 0 $header-button-size;
+		padding: 1rem 0;
 	}
 
-	> .right {
+	.right {
 		position: absolute;
 		left: auto;
 		top: 0;
@@ -35,4 +46,8 @@ $header-button-size: 4.8rem;
 		z-index: 3;
 		float: right;
 	}
+}
+
+%header {
+	@include header;
 }

@@ -1,7 +1,7 @@
 @import "base";
 
 #{$theme-prefix} {
-	&.button {
+	.button {
 		@extend %button;
 		color: $button-color;
 
@@ -23,7 +23,7 @@
 		}
 	}
 
-	&.btn-group {
+	.btn-group {
 		@extend %btn-group;
 	}
 }

@@ -1,12 +1,12 @@
 @import "base";
 
 #{$theme-prefix} {
-	&.form {
-		@extend %form;
+	.form {
+		@include form;
 	}
 
-	&.form-group {
-		@extend %form-group;
+	.form-group {
+		@include form-group;
 
 		> label {
 			color: $form-label-color;

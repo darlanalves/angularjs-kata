@@ -1,11 +1,19 @@
-%form {
+@mixin form {
 	@extend %vr-block;
 }
 
-%form-group {
+@mixin form-group {
 	@extend %vr-level-7;
 
 	> label {
 		@extend %vr-label;
 	}
+}
+
+%form-group {
+	@include form-group;
+}
+
+%form {
+	@include form;
 }
