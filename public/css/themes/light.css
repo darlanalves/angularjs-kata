@@ -8,7 +8,7 @@
   padding: 0 1.4rem 1.4rem;
   font-size: 1.4rem; }
 
-.light .list-item, .light .checkbox + label, .light .form, .light .header {
+.light .list-item, .light .checkbox + label, .light .form {
   padding: 1.4rem;
   font-size: 1.4rem; }
 
@@ -27,7 +27,7 @@
 .light .input:last-child, .light .last.input {
   margin-right: 0; }
 
-.light .btn-group, .light .checkbox + label {
+.light .btn-group, .light .checkbox + label, .light .header {
   padding-left: 1.4rem;
   padding-right: 1.4rem; }
 

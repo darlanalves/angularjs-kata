@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 1.4rem 1.4rem;
   font-size: 1.4rem; }
 
-.dark .list-item, .dark .checkbox + label, .dark .form, .dark .header {
+.dark .list-item, .dark .checkbox + label, .dark .form {
   padding: 1.4rem;
   font-size: 1.4rem; }
 
@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 .dark .input:last-child, .dark .last.input {
   margin-right: 0; }
 
-.dark .btn-group, .dark .checkbox + label {
+.dark .btn-group, .dark .checkbox + label, .dark .header {
   padding-left: 1.4rem;
   padding-right: 1.4rem; }
 
@@ -305,7 +305,7 @@ body {
   padding: 0 1.4rem 1.4rem;
   font-size: 1.4rem; }
 
-.light .list-item, .light .checkbox + label, .light .form, .light .header {
+.light .list-item, .light .checkbox + label, .light .form {
   padding: 1.4rem;
   font-size: 1.4rem; }
 
@@ -324,7 +324,7 @@ body {
 .light .input:last-child, .light .last.input {
   margin-right: 0; }
 
-.light .btn-group, .light .checkbox + label {
+.light .btn-group, .light .checkbox + label, .light .header {
   padding-left: 1.4rem;
   padding-right: 1.4rem; }
 
