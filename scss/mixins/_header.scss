@@ -1,0 +1,38 @@
+$header-button-size: 4.8rem;
+
+%header {
+	display: block;
+	position: relative;
+	@extend %vr-block;
+	@extend %theme-b;
+
+	button {
+		padding: $font-size;
+		font-size: $font-size;
+		border: 0;
+	}
+
+	> .left {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+		float: left;
+	}
+
+	> .center {
+		@extend %ellipsis;
+		text-align: center;
+		font-weight: bold;
+		margin: 0 $header-button-size;
+	}
+
+	> .right {
+		position: absolute;
+		left: auto;
+		top: 0;
+		right: 0;
+		z-index: 3;
+		float: right;
+	}
+}

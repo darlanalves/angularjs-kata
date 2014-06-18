@@ -6,7 +6,7 @@ module.exports = function(config) {
 
 		// test results reporter to use
 		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-		reporters: ['progress'], //, 'coverage'
+		reporters: ['progress', 'coverage'],
 
 		// level of logging
 		// possible values: config.LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
@@ -30,10 +30,15 @@ module.exports = function(config) {
 			'public/lib/angular.js',
 			'public/lib/angular-mocks.js',
 			'public/lib/angular-ui-router.js',
-			'public/app.js',
+			'src/module.js',
+			'src/**/*.js',
 			'test/unit/**/*.spec.js',
 			'test/unit/run.js'
 			// 'public/mocks.js'
+		],
+
+		exclude: [
+			'src/routes.js'
 		],
 
 		urlRoot: '/__karma__/',
@@ -54,8 +59,9 @@ module.exports = function(config) {
 		// web server port
 		port: 9800,
 
+		// NOTE: the "**/" portion is essential to get the coverage results
 		preprocessors: {
-			'src/**/*.js': ['coverage']
+			'**/src/**/*.js': 'coverage'
 		},
 
 		coverageReporter: {

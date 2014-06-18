@@ -1,0 +1,15 @@
+@import "base";
+
+a {
+	color: white;
+	text-decoration: underline;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+@import "component/button.scss";
+@import "component/checkbox.scss";
+@import "component/form.scss";
+@import "component/header.scss";
+@import "component/input.scss";
+@import "component/list.scss";

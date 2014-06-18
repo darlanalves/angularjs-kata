@@ -1,0 +1,14 @@
+<h2>{{task.title}}</h2>
+<form ng-submit="saveTask(taskForm)" name="taskForm">
+	<label>
+		<input type="text" ng-model="task.title" placeholder="e.g. wash the dishes" />
+	</label>
+	<label>
+		<input type="checkbox" ng-model="task.done" /> done
+	</label>
+	<label>
+		<textarea rows="3" ng-model="task.description" placeholder="Type in a comment"></textarea>
+	</label>
+	
+	<button type="submit">Update</button>
+</form>

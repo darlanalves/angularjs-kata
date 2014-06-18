@@ -3,28 +3,25 @@ $module.config(['$stateProvider',
 		var states = {
 			'index': {
 				url: '',
-				controller: ['$state',
-					function($state) {
-						$state.go('todo-list');
-					}
-				]
+				controller: 'HomeController',
+				templateUrl: '/home.html'
 			},
-			'todo-list': {
+			'task-list': {
 				url: '/tasks',
 				templateUrl: '/task/list.html',
 				controller: 'TaskListController'
 			},
 
-			'todo-create': {
+			'task-create': {
 				url: '/tasks/new',
 				templateUrl: '/task/create.html',
 				controller: 'TaskCreateController'
 			},
 
-			'todo-view': {
+			'task-edit': {
 				url: '/tasks/:taskId',
-				templateUrl: '/task/view.html',
-				controller: 'TaskViewController'
+				templateUrl: '/task/edit.html',
+				controller: 'TaskEditController'
 			}
 		};
 

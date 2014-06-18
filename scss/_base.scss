@@ -1,0 +1,33 @@
+$font-size: 62.5%;
+$font-family: 'Droid Sans', arial, sans-serif;
+
+$base-vertical-font: $font-size;
+$base-vertical-size: 2.25 * $font-size;
+
+$list-color: #fafafa;
+$list-background: #444;
+$list-background-header: #2f2f2f;
+$list-background-active: #333;
+
+$checkbox-background: lighten($list-background, 5%);
+$checkbox-background-active: #fafafa;
+
+$button-color: white;
+$button-background-default: #6E9BB7;
+$button-background-submit: #79B14B;
+$button-background-reset: #E7643F;
+$button-background-disabled: #847A6E;
+
+$input-background: #fcfcfc;
+$input-background-active: white;
+$input-background-disabled: lighten(#847A6E, 10%);
+$input-background-invalid: lighten(#c00, 15%);
+
+$input-color: #333;
+$input-color-active: black;
+$input-color-disabled: #d11;
+$input-color-invalid: #d11;
+
+$form-label-color: white;
+
+@import "mixins";

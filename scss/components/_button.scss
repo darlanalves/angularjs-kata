@@ -1,0 +1,27 @@
+@import "base";
+
+.button {
+	@extend %button;
+	color: $button-color;
+
+	&[type="submit"] {
+		background: $button-background-submit;
+	}
+
+	&[type="reset"] {
+		background: $button-background-reset;
+	}
+
+	&[type="button"] {
+		background: $button-background-default;
+	}
+
+	&[disabled] {
+		background: $button-background-disabled;
+		color: lighten($button-background-disabled, 20%);
+	}
+}
+
+.btn-group {
+	@extend %btn-group;
+}

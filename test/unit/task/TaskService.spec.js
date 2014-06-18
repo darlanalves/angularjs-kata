@@ -13,21 +13,20 @@ describe('TaskService:', function() {
 	});
 
 	describe('save(task)', function() {
-		it('should save a task', inject(function(TaskService, $rootScope) {
-			var response;
-
-			runs(function() {
-				var task = {
-					id: 123,
+		it('should save a task and do not persist private properties as task properties', inject(function(TaskService, $rootScope) {
+			var response,
+				task = {
+					$$id: 123,
 					title: 'Foo'
 				};
 
+			runs(function() {
 				function continueTest(response_) {
 					response = response_;
 				}
 
 				$httpBackend.when('POST', '/api/task').respond(201, {
-					success: true
+					title: 'Foo'
 				});
 				TaskService.save(task).then(continueTest, continueTest);
 				$httpBackend.flush();
@@ -38,8 +37,9 @@ describe('TaskService:', function() {
 			}, 'the task to be saved', 100);
 
 			runs(function() {
-				expect(response).toBeDefined();
-				expect(response.status).toBe(201);
+				expect(typeof response).toBe('object')
+				expect(response.title).toBe(task.title);
+				expect(response.$$id).toBeUndefined();
 			});
 		}));
 	});
@@ -76,8 +76,8 @@ describe('TaskService:', function() {
 	});
 
 	describe('findOne(id)', function() {
-		it('should fetch a tasks', inject(function(TaskService) {
-			var response,
+		it('should fetch a task', inject(function(TaskService) {
+			var taskResponse,
 				task = {
 					id: 123,
 					title: 'Sample task'
@@ -85,7 +85,30 @@ describe('TaskService:', function() {
 
 			runs(function() {
 				$httpBackend.whenGET(/^\/api\/task\/[^\/]+$/).respond(200, task);
-				TaskService.findOne().then(function(response_) {
+				TaskService.findOne().then(function(response) {
+					taskResponse = response;
+				});
+				$httpBackend.flush();
+			});
+
+			waitsFor(function() {
+				return taskResponse;
+			}, 'a task to be loaded', 100);
+
+			runs(function() {
+				expect(taskResponse.id).toBeDefined();
+				expect(taskResponse.title).toBe(task.title);
+			});
+		}));
+	});
+
+	describe('remove(id)', function() {
+		it('should remove a task', inject(function($httpBackend, TaskService) {
+			var response;
+
+			runs(function() {
+				$httpBackend.whenDELETE('/api/task/123').respond(200);
+				TaskService.remove(123).then(function(response_) {
 					response = response_;
 				});
 				$httpBackend.flush();
@@ -93,13 +116,10 @@ describe('TaskService:', function() {
 
 			waitsFor(function() {
 				return response;
-			}, 'a task to be loaded', 100);
+			}, 'a task to be removed', 100);
 
 			runs(function() {
-				var task_ = response.data;
-
-				expect(task_.id).toBeDefined();
-				expect(task_.title).toBe(task.title);
+				expect(response.status).toBe(200);
 			});
 		}));
 	});

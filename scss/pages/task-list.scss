@@ -1,0 +1,32 @@
+@import "base";
+
+.form-new-task {
+	background: lighten(#444, 3%);
+
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	> div {
+		overflow: hidden;
+	}
+
+	.input-container {
+		width: 80%;
+		float: left;
+	}
+
+	.button-container {
+		width: 20%;
+
+		button {
+			border-radius: 0;
+			width: 100%;
+		}
+	}
+}
+
+.task-list .done label {
+	text-decoration: line-through;
+}

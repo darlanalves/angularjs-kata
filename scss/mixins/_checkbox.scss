@@ -1,0 +1,23 @@
+%checkbox {
+	display: none;
+
+	+ label,
+	+ .list-item {
+		display: block;
+		@extend %vr-block;
+		@extend %paddings;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			float: left;
+			width: $font-size;
+			height: $font-size;
+			margin: 0 $font-size 0 0;
+			border-radius: 2px;
+			background-repeat: no-repeat;
+			background-position: center;
+			@include background-size(100%, 100%);
+		}
+	}
+}

@@ -1,0 +1,14 @@
+$header-button-size: 48px;
+
+.header {
+	@extend %header;
+
+	button {
+		background-color: transparent;
+		color: white;
+
+		&:hover, &:focus {
+			@include box-shadow(#333, 0, 0, 7px, 0, inset);
+		}
+	}
+}

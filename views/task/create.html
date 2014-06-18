@@ -1,3 +1,11 @@
-<span>Title</span>
-<input type="text" ng-model="task.title"/>
-<button type="button" ng-click="saveTask()">Save</button>
+<h2>New task</h2>
+<form class="form form-new-task" ng-submit="saveTask(taskForm)" name="taskForm">
+	<div class="input-container">
+		<label>Task name
+			<input type="text" ng-model="task.title" placeholder="e.g. wash the dishes" />
+		</label>
+	</div>
+	<div class="button-container">
+		<button type="submit" class="button" ng-disabled="taskForm.$invalid">Create</button>
+	</div>
+</form>

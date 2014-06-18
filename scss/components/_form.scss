@@ -1,0 +1,13 @@
+@import "base";
+
+.form {
+	@extend %form;
+}
+
+.form-group {
+	@extend %form-group;
+
+	> label {
+		color: $form-label-color;
+	}
+}

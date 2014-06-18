@@ -19,8 +19,8 @@ gulp test 		// test runner
 
 ## Files and folders
 
-Put the HTML templates under `/views`, the app files under `src`, the SASS sources under `scss` and the tests under `test`.
-The file structure is straightforward and easy to get going
+Put the HTML templates under `views`, the app files under `src`, the SASS sources under `scss` and the tests under `test`.
+The file structure is straightforward and easy to get going.
 
 To use the app without a backend (for testing purposes), go to `http://localhost:8000/index-dev.html` and write server-side stuff under `public/mock`.
-To see the app in action with a backend (which is not implemented here), go to `http://localhost:8000/`
+To see the app in action with a backend (which is roughly implemented), go to `http://localhost:8000/`

@@ -1,0 +1,10 @@
+$input-paddings: $base-vertical-font*2;
+
+%input {
+	width: calc(100% - #{$input-paddings});
+	display: inline-block;
+	border: 0;
+	outline: 0;
+	@extend %vr-input;
+	@extend %fl-margins;
+}

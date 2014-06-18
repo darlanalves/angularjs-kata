@@ -1,0 +1,21 @@
+%list {
+	.header {
+		font-weight: bold;
+		&:focus, &:hover { outline: 0; }
+	}
+
+	.inline-edit {
+		input {
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+	}
+}
+
+%list-item {
+	cursor: pointer;
+	@extend %paddings;
+	@extend %ellipsis;
+}

@@ -1,0 +1,11 @@
+%form {
+	@extend %vr-block;
+}
+
+%form-group {
+	@extend %vr-level-7;
+
+	> label {
+		@extend %vr-label;
+	}
+}

@@ -1,13 +1,13 @@
-<h2>Tasks</h2>
-<table>
-	<thead>
-		<th>#</th>
-		<th>title</th>
-	</thead>
-	<tbody>
-		<tr ng-repeat='task in taskList'>
-			<td>{{task.id}}</td>
-			<td>{{task.title}}</td>
-		</tr>
-	</tbody>
-</table>
+<header>
+	<div class="left"><button><i class="icon-reorder"></i></button></div>
+	<div class="center">Tasks</div>
+	<div class="right"><button  ui-sref="task-create"><i class="icon-plus"></i></button></div>
+</header>
+
+<div class="list checkbox task-list">
+	<span ng-repeat="task in taskList" ng-class="{done: task.done}">
+		<input type="checkbox" ng-model="task.done" ng-change="updateTask(task)" id="task-{{task.id}}" />
+		<label class="list-item" for="task-{{task.id}}">{{task.name}}</label>
+		<a ui-sref="task-edit({taskId: task.id})">&raquo;</a>
+	</span>
+</div>

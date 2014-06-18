@@ -1,4 +1,4 @@
-describe('TaskViewController:', function() {
+describe('TaskEditController:', function() {
 	beforeEach(module('todo-dev'));
 
 	var controllerScope,
@@ -11,7 +11,7 @@ describe('TaskViewController:', function() {
 			findOne: function(task) {
 				return {
 					id: 45,
-					title: 'qudsadas'
+					title: 'test'
 				};
 			}
 		};
@@ -23,7 +23,7 @@ describe('TaskViewController:', function() {
 				taskId: 1
 			};
 
-		$controller('TaskViewController', {
+		$controller('TaskEditController', {
 			$scope: controllerScope,
 			TaskService: TaskService,
 			$stateParams: $stateParams
