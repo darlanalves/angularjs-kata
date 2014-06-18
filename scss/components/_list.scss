@@ -1,29 +1,31 @@
-.list {
-	@extend %list;
-	background-color: $list-background;
+#{$theme-prefix} {
+	&.list {
+		@extend %list;
+		background-color: $list-background;
 
-	.header {
-		background-color: $list-background-header;
-	}
+		.header {
+			background-color: $list-background-header;
+		}
 
-	.inline-edit {
-		input {
-			color: $list-color;
-			background: transparent;
+		.inline-edit {
+			input {
+				color: $list-color;
+				background: transparent;
 
-			&:focus {
-				background-color: lighten($list-background, 5%);
+				&:focus {
+					background-color: lighten($list-background, 5%);
+				}
 			}
 		}
 	}
-}
 
-.list-item {
-	@extend %list-item;
-	color: $list-color;
-	
-	&:focus, &:hover {
-		background-color: $list-background-active;
-		outline: 1px solid darken($list-background-active, 5%);
+	&.list-item {
+		@extend %list-item;
+		color: $list-color;
+		
+		&:focus, &:hover {
+			background-color: $list-background-active;
+			outline: 1px solid darken($list-background-active, 5%);
+		}
 	}
 }

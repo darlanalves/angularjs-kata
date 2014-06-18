@@ -1,0 +1,37 @@
+$base-background: #444;
+$base-color: white;
+
+$list-color: #fafafa;
+$list-background: $base-background;
+$list-background-header: #2f2f2f;
+$list-background-active: #333;
+
+$checkbox-background: lighten($list-background, 5%);
+$checkbox-background-active: #fafafa;
+
+$button-color: $base-color;
+$button-background-default: #6E9BB7;
+$button-background-submit: #79B14B;
+$button-background-reset: #E7643F;
+$button-background-disabled: #847A6E;
+
+$input-background: #fcfcfc;
+$input-background-active: $base-color;
+$input-background-disabled: lighten(#847A6E, 10%);
+$input-background-invalid: lighten(#c00, 15%);
+
+$input-color: #333;
+$input-color-active: black;
+$input-color-disabled: #d11;
+$input-color-invalid: #d11;
+
+$form-label-color: $base-color;
+
+$theme-prefix: [theme="dark"];
+
+@import "theme";
+
+body {
+	background: $base-background;
+	color: $base-color;
+}

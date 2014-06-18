@@ -1,0 +1,26 @@
+%edge-children-margins {
+	&:first-child, &.first { margin-left: 0 }
+	&:last-child, &.last { margin-right: 0 }
+}
+
+%paddings {
+	padding-left: $font-size;
+	padding-right: $font-size;
+}
+
+%double-paddings {
+	padding-left: $font-size*2;
+	padding-right: $font-size*2;
+}
+
+%clear {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}

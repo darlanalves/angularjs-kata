@@ -6,5 +6,5 @@ $input-paddings: $base-vertical-font*2;
 	border: 0;
 	outline: 0;
 	@extend %vr-input;
-	@extend %fl-margins;
+	@extend %edge-children-margins;
 }

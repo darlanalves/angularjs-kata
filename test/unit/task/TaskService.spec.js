@@ -56,8 +56,8 @@ describe('TaskService:', function() {
 					}]];
 				});
 
-				TaskService.findAll().then(function(response) {
-					list = response.data;
+				TaskService.findAll().then(function(list_) {
+					list = list_;
 				}, function() {
 					list = null;
 				});

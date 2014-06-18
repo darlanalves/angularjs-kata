@@ -1,13 +1,15 @@
 @import "base";
 
-.form {
-	@extend %form;
-}
+#{$theme-prefix} {
+	&.form {
+		@extend %form;
+	}
 
-.form-group {
-	@extend %form-group;
+	&.form-group {
+		@extend %form-group;
 
-	> label {
-		color: $form-label-color;
+		> label {
+			color: $form-label-color;
+		}
 	}
 }

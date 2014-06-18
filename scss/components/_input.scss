@@ -1,24 +1,26 @@
 $input-paddings: $base-vertical-font*2;
 
-select,
-.input,
-input:not([type="submit"]),
-input:not([type="button"]) {
-	@extend %input;
-	background-color: $input-background;
-	
-	&:focus {
-		background-color: $input-background-active;
+#{$theme-prefix} {
+	&select,
+	&.input,
+	&input:not([type="submit"]),
+	&input:not([type="button"]) {
+		@extend %input;
+		background-color: $input-background;
+		
+		&:focus {
+			background-color: $input-background-active;
+		}
 	}
-}
 
-input.invalid, input.ng-invalid,
-input.invalid:focus, input.ng-invalid:focus {
-	color: $input-color-invalid;
-	@include box-shadow($input-background-invalid, 0, 0, 10px, 0);
-}
+	&input.invalid, input.ng-invalid,
+	&input.invalid:focus, input.ng-invalid:focus {
+		color: $input-color-invalid;
+		@include box-shadow($input-background-invalid, 0, 0, 10px, 0);
+	}
 
-input[disabled] {
-	background: $input-background-disabled;
-	opacity: 0.85;
+	&input[disabled] {
+		background: $input-background-disabled;
+		opacity: 0.85;
+	}
 }

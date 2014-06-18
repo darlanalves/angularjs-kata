@@ -5,73 +5,6 @@ $lv-4: 1.5;
 $lv-5: 14/12;
 $lv-6: 1;
 
-%vr-level-1 {
-	padding: 0 $base-vertical-font;
-	font-size: $lv-1 * $base-vertical-font;
-}
-
-%vr-level-2 {
-	padding: 0 $base-vertical-font (($lv-1 - $lv-2) / 2 * $base-vertical-size);
-	font-size: $lv-2 * $base-vertical-font;
-}
-
-%vr-level-3 {
-	padding: 0 $base-vertical-font (($lv-1 - $lv-3) / 2 * $base-vertical-size);
-	font-size: $lv-3 * $base-vertical-font;
-}
-
-%vr-level-4 {
-	padding: 0 $base-vertical-font (($lv-1 - $lv-4) / 2 * $base-vertical-size);
-	font-size: $lv-4 * $base-vertical-font;
-}
-
-%vr-level-5 {
-	padding: 0 $base-vertical-font (($lv-1 - $lv-5) / 2 * $base-vertical-size);
-	font-size: $lv-5 * $base-vertical-font;
-}
-
-%vr-level-6 {
-	padding: 0 $base-vertical-font (($lv-1 - $lv-6) / 2 * $base-vertical-size);
-	font-size: $base-vertical-font;
-}
-
-%vr-level-7 {
-	padding: 0 $base-vertical-font $base-vertical-font;
-	font-size: $base-vertical-font;
-}
-
-%vr-block {
-	padding: $base-vertical-font;
-	font-size: $base-vertical-font;
-}
-
-%vr-input {
-	padding: $base-vertical-font/2 $base-vertical-font;
-	margin: $base-vertical-font/2 0;
-	font-size: $base-vertical-font;
-}
-
-%vr-label {
-	padding: $base-vertical-font/2 0;
-	margin: $base-vertical-font/2 0;
-	font-size: $base-vertical-font;
-}
-
-%fl-margins {
-	&:first-child, &.first { margin-left: 0 }
-	&:last-child, &.last { margin-right: 0 }
-}
-
-%paddings {
-	padding-left: $font-size;
-	padding-right: $font-size;
-}
-
-%double-paddings {
-	padding-left: $font-size*2;
-	padding-right: $font-size*2;
-}
-
 %ellipsis {
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -90,6 +23,15 @@ $lv-6: 1;
 	box-shadow: $inset $x-offset $y-offset $blur-offset $color-offset $color;
 }
 
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { color:$color; }
+	&::-moz-placeholder { color: $color; opacity: 1; }
+	&:-ms-input-placeholder { color: $color; }
+	&:-moz-placeholder { color: $color; opacity: 1; }
+}
+
+@import "mixins/vertical-rhythm";
+@import "mixins/layout";
 @import "mixins/button";
 @import "mixins/checkbox";
 @import "mixins/form";
